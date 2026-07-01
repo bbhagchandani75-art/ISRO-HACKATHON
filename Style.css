@@ -1,1 +1,381 @@
+/* ==========================
+   SOLAR FLARE DASHBOARD
+   style.css
+========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#07111f;
+    color:#ffffff;
+    min-height:100vh;
+}
+
+/* Background Glow */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#ff8c0030;
+    border-radius:50%;
+    top:-150px;
+    left:-150px;
+    filter:blur(120px);
+    z-index:-2;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#0099ff25;
+    border-radius:50%;
+    right:-100px;
+    bottom:-100px;
+    filter:blur(120px);
+    z-index:-2;
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:30px 20px;
+}
+
+header h1{
+    font-size:34px;
+    color:#ffb347;
+}
+
+header p{
+    margin-top:10px;
+    color:#c9d5e8;
+}
+
+/* Grid */
+
+.container{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:22px;
+
+    margin-top:25px;
+
+}
+
+/* Card */
+
+.card{
+
+    background:#111d30;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    box-shadow:0 0 20px rgba(0,180,255,.18);
+
+    transition:.35s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 35px rgba(0,180,255,.35);
+
+}
+
+.card h2{
+
+    color:#59c8ff;
+
+    margin-bottom:18px;
+
+    font-size:22px;
+
+}
+
+/* Input */
+
+input[type=file]{
+
+    width:100%;
+
+    margin:18px 0;
+
+    color:white;
+
+}
+
+/* Select */
+
+select{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#0b1628;
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    margin-bottom:18px;
+
+}
+
+/* Buttons */
+
+button{
+
+    width:100%;
+
+    padding:13px;
+
+    background:linear-gradient(90deg,#ff9800,#ff5722);
+
+    color:white;
+
+    border:none;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 0 18px #ff9800;
+
+}
+
+/* Results */
+
+.result p{
+
+    margin:15px 0;
+
+    font-size:17px;
+
+}
+
+.high{
+
+    background:#ff3d3d;
+
+    padding:5px 12px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+}
+
+.medium{
+
+    background:#ffc107;
+
+    color:black;
+
+    padding:5px 12px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+}
+
+.low{
+
+    background:#22c55e;
+
+    padding:5px 12px;
+
+    border-radius:25px;
+
+    font-weight:bold;
+
+}
+
+.active{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:7px 15px;
+
+    background:#16c784;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+/* Temperature */
+
+#temp{
+
+    font-size:42px;
+
+    color:#ffb347;
+
+    margin:20px 0;
+
+}
+
+/* Recent Activity */
+
+ul{
+
+    list-style:none;
+
+}
+
+ul li{
+
+    padding:10px;
+
+    margin:8px 0;
+
+    background:#0d1728;
+
+    border-left:4px solid #00bfff;
+
+    border-radius:6px;
+
+}
+
+/* Graph */
+
+.graph-card{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:40px auto;
+
+    background:#111d30;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    box-shadow:0 0 20px rgba(0,180,255,.2);
+
+}
+
+.graph-card h2{
+
+    color:#59c8ff;
+
+    margin-bottom:25px;
+
+}
+
+canvas{
+
+    width:100% !important;
+
+    height:380px !important;
+
+}
+
+/* Footer */
+
+footer{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#9db0c7;
+
+    font-size:15px;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#07111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2196f3;
+
+    border-radius:20px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:26px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.graph-card{
+
+padding:18px;
+
+}
+
+canvas{
+
+height:260px !important;
+
+}
+
+  }
