@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Flare Forecast Dashboard</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-sun"></i> Solar Flare Forecast Dashboard</h1>
+    <p>AI-Based Space Weather Prediction using Markov Chain Model</p>
+</header>
+
+<div class="container">
+
+    <!-- Upload -->
+    <div class="card">
+        <h2><i class="fa-solid fa-file-arrow-up"></i> Upload Observation Data</h2>
+
+        <input type="file" id="csvFile" accept=".csv">
+
+        <button id="uploadBtn">
+            Upload Data
+        </button>
+    </div>
+
+    <!-- Forecast -->
+    <div class="card">
+        <h2><i class="fa-solid fa-clock"></i> Forecast Horizon</h2>
+
+        <select id="forecast">
+            <option>5 Minutes</option>
+            <option>15 Minutes</option>
+            <option>30 Minutes</option>
+            <option>60 Minutes</option>
+        </select>
+
+        <button id="predictBtn">
+            Run Markov Prediction
+        </button>
+    </div>
+
+    <!-- Result -->
+    <div class="card">
+        <h2><i class="fa-solid fa-bolt"></i> Prediction Result</h2>
+
+        <div class="result">
+
+            <p><strong>Flare Class:</strong>
+                <span id="flareClass">M-Class</span>
+            </p>
+
+            <p><strong>Probability:</strong>
+                <span id="probability">82%</span>
+            </p>
+
+            <p><strong>Estimated Time:</strong>
+                <span id="time">12 Minutes</span>
+            </p>
+
+            <p><strong>Risk Level:</strong>
+                <span class="high">HIGH</span>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Plasma -->
+    <div class="card">
+        <h2><i class="fa-solid fa-temperature-high"></i> Plasma Temperature</h2>
+
+        <h3 id="temp">
+            13.8 MK
+        </h3>
+
+        <small>Estimated from SoLEXS + HEL1OS observations</small>
+    </div>
+
+    <!-- Model -->
+    <div class="card">
+        <h2><i class="fa-solid fa-brain"></i> Prediction Model</h2>
+
+        <p>Model Name:</p>
+
+        <h3>Markov Chain Model</h3>
+
+        <p>Status</p>
+
+        <span class="active">ACTIVE</span>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="card">
+        <h2><i class="fa-solid fa-list"></i> Recent Solar Activity</h2>
+
+        <ul>
+            <li>08:10 UTC - C-Class Detected</li>
+            <li>09:45 UTC - M-Class Detected</li>
+            <li>10:30 UTC - X-Ray Flux Increased</li>
+            <li>11:00 UTC - Plasma Temperature Rising</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Graph -->
+
+<div class="graph-card">
+
+    <h2>
+        <i class="fa-solid fa-chart-line"></i>
+        Flare Probability Trend
+    </h2>
+
+    <canvas id="flareChart"></canvas>
+
+</div>
+
+<footer>
+
+    <p>
+        ISRO Hackathon Demo Project |
+        Solar Flare Forecast using Markov Chain
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+  </html>
